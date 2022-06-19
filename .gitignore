@@ -1,0 +1,11 @@
+.vscode/
+__pycache__/
+.pytest-cache/
+
+env/
+node_modules/
+package-lock.json
+
+production.min.css
+private_settings.py
+*.db
