@@ -1,4 +1,4 @@
-name: Otestovať cez pyTest 
+name: Otestovať cez pyTest
 
 on: [workflow_dispatch, push, pull_request]
 
