@@ -19,12 +19,12 @@ jobs:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
 
-    - name: Nainštalovať potrebné knižnice 
+    - name: Nainštalovať potrebné knižnice
       run: |
         python -m pip install --upgrade pip
         python -m pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
-    - name: Otestovať cez pyTest 
+    - name: Otestovať cez pyTest
       run: |
         python -m pytest -v -x testy
