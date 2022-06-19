@@ -1,4 +1,4 @@
-name: Test with pyTest
+name: Otestovať cez pyTest 
 
 on: [workflow_dispatch, push, pull_request]
 
@@ -13,18 +13,18 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Python
+    - name: Pripraviť Python
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
 
-    - name: Install dependencies
+    - name: Nainštalovať potrebné knižnice 
       run: |
         python -m pip install --upgrade pip
         python -m pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
-    - name: Test with pyTest
+    - name: Otestovať cez pyTest 
       run: |
         python -m pytest -v -x testy
