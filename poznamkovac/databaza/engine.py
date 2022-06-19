@@ -6,7 +6,7 @@ from pathlib import Path
 from sqlmodel import create_engine, SQLModel
 
 # Musíme všetky modely preniesť do tohto prostredia, aby ich SQLAlchemy našla.
-from poznamkovac.databaza.modely import Pouzivatel
+from poznamkovac.databaza.modely import Pouzivatel, Pouzivatel_Skupina_spojenie, Skupina, TematickyCelok, TematickyCelok_Predmet_spojenie, TematickyCelok_Ucivo_spojenie, Predmet, Ucivo
 
 try:
     from poznamkovac.sukromne_nastavenia import URI_DATABAZY
@@ -24,7 +24,16 @@ else:
 
 
 VSETKY_MODELY: t.List[t.Type[SQLModel]] = [
-    Pouzivatel
+    Pouzivatel,
+    Pouzivatel_Skupina_spojenie,
+    Skupina,
+
+    TematickyCelok,
+    TematickyCelok_Predmet_spojenie,
+    TematickyCelok_Ucivo_spojenie,
+
+    Predmet,
+    Ucivo
 ]
 """Zoznam všetkých modelov pre databázu."""
 

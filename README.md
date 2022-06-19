@@ -2,6 +2,10 @@
 
 Aplikácia vytvorená študentom, pre študentov.
 
+## Chyby
+
+- Databázové spojenia nefungujú ([sqlmodel#315](https://github.com/tiangolo/sqlmodel/issues/315))
+
 ## 🎁 Podporte ma
 
 Vytváram open-source softvér pre ľudí zdrama.
