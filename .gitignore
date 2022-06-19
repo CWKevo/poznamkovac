@@ -6,6 +6,6 @@ env/
 node_modules/
 package-lock.json
 
-production.min.css
-private_settings.py
+produkcia.min.css
+sukromne_nastavenia.py
 *.db

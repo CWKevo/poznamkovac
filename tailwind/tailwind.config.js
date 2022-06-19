@@ -1,6 +1,7 @@
 module.exports = {
+  darkMode: 'class',
   content: [
-    '../python_web_project_template/web/**/*.html'
+    '../poznamkovac/web/**/*.html'
   ],
   theme: {
     extend: {},

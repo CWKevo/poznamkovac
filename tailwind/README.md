@@ -1,7 +1,7 @@
-# Tailwind CSS compiler
+# Tailwind CSS kompilátor
 
-Compiles your CSS Tailwind file from classes found in your source code.
+Zkompiluje Tailwind CSS do statických súborov pre CSS.
 
-To initialize, you must have Node.js installed on your machine. Then, `cd` into this directory and run `npm install` to install all dependencies.
+Na svojej mašine musíš mať Node.js. Následne, `cd`-uj sa do tohto priečinku a spusti `npm install` pre insťalovanie potrebných knižníc.
 
-When that's done, head to `../scripts/compile_tailwind.sh` to compile the CSS.
+Keď je to hotové, spusti `../skripty/tailwind.sh` pre zkompilovanie CSS.

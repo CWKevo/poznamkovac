@@ -1,0 +1,23 @@
+# Translations template for Poznámkovač.
+# Copyright (C) 2022 SKevo
+# This file is distributed under the same license as the Poznámkovač project.
+# SKevo <me@kevo.link>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Poznámkovač 0.0.1\n"
+"Report-Msgid-Bugs-To: me@kevo.link\n"
+"POT-Creation-Date: 2022-06-19 08:00+0200\n"
+"PO-Revision-Date: 2022-06-19 08:00+0200\n"
+"Last-Translator: SKevo <me@kevo.link>\n"
+"Language-Team: SK <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#: ../../poznamkovac/web/sablony/main/index.html:4
+msgid "Obsah"
+msgstr ""
+
