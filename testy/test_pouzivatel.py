@@ -3,7 +3,7 @@ from bcrypt import checkpw
 
 from poznamkovac.funkcie.hashing import hashovat_heslo
 
-from poznamkovac.databaza import DATABAZA
+from testy import TEST_DATABAZA
 from poznamkovac.databaza.modely import Pouzivatel
 
 
@@ -13,7 +13,7 @@ def test_pouzivatel():
         Otestuje vytváranie a načítanie používateľa.
     """
 
-    with Session(DATABAZA) as s:
+    with Session(TEST_DATABAZA) as s:
         s.add(Pouzivatel(prezyvka='Mrkvickovac', email='mrkva@pistek.gov', heslo=hashovat_heslo('123456789'))) # nikdy neukladaj do databázy heslo "len-tak"!
         s.commit()
 

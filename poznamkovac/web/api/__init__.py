@@ -1,5 +1,5 @@
 import typing as t
-import poznamkovac.nastavenia as s
+import poznamkovac.nastavenia as n
 
 from poznamkovac.sukromne_nastavenia import SENTRY_DSN
 
@@ -38,7 +38,7 @@ class JSONResponse(_JSONResponse):
 
 
 
-API = fa.FastAPI(title=f"{s.NAZOV} API", version=s.VERZIA, docs_url="/", redoc_url="/redoc", default_response_class=JSONResponse)
+API = fa.FastAPI(title=f"{n.NAZOV} API", version=n.VERZIA, docs_url="/", redoc_url="/redoc", default_response_class=JSONResponse)
 
 for router in VSETKY_ROUTERY:
     API.include_router(router, prefix=router.prefix)
@@ -75,7 +75,7 @@ def api_url_for(name: str, ako_uri: bool=True, **path_params) -> t.Optional[URLP
                 return cesta
 
             else:
-                return f"{'https://' if s.POUZIT_HTTPS else 'http://'}{s.API_DOMENA}{cesta}"
+                return f"{'https://' if n.POUZIT_HTTPS else 'http://'}{n.API_DOMENA}{cesta}"
 
         except NoMatchFound:
             continue

@@ -18,7 +18,7 @@
 
         <footer x-data="{ copyright_rok: new Date().getFullYear() }">
             {% block footer %}
-            <p class="bg-gray-200">Copyright &copy; <span x-text="copyright_rok"></span> {{ APP_NAME }} ({{ APP_VERSION }}).</p>
+            <p class="p-4 text-center bg-gray-200">Copyright &copy; <span x-text="copyright_rok"></span> {{ APP_NAME }} ({{ APP_VERSION }}).</p>
             {% endblock footer %}
         </footer>
     </body>

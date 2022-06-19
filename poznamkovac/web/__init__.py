@@ -1,6 +1,6 @@
 import typing as t
 
-import poznamkovac.nastavenia as s
+import poznamkovac.nastavenia as n
 
 from flask import Flask
 from flask_login import LoginManager
@@ -8,7 +8,7 @@ from flask_babel import Babel
 
 from sqlmodel import Session, select
 
-from poznamkovac.databaza import DATABAZA
+from poznamkovac.databaza.engine import DATABAZA
 from poznamkovac.databaza.modely import Pouzivatel
 
 from poznamkovac.web.api import api_url_for
@@ -26,7 +26,7 @@ if SENTRY_DSN is not None:
 
 WEB = Flask(__name__, static_folder='staticke_subory', template_folder='sablony')
 WEB.config["SECRET_KEY"] = TAJNY_KLUC
-WEB.config['DEBUG'] = s.DEBUG
+WEB.config['DEBUG'] = n.DEBUG
 WEB.config['BABEL_TRANSLATION_DIRECTORIES'] = '../i18n/preklady'
 
 AUTHENTICATION = LoginManager(WEB)
@@ -41,8 +41,8 @@ for blueprint in VSETKY_BLUEPRINTY:
 def add_additional_context():
     return {
         'api_url_for': api_url_for,
-        'APP_NAME': s.NAZOV,
-        'APP_VERSION': s.VERZIA
+        'APP_NAME': n.NAZOV,
+        'APP_VERSION': n.VERZIA
     }
 
 
@@ -55,4 +55,4 @@ def load_user(id) -> t.Optional[Pouzivatel]:
 
 
 if __name__ == '__main__':
-    WEB.run(host=s.WEB_HOST, port=s.WEB_PORT, debug=s.DEBUG)
+    WEB.run(host=n.WEB_HOST, port=n.WEB_PORT, debug=n.DEBUG)
