@@ -4,7 +4,10 @@ fastapi
 sqlmodel
 
 bcrypt
-flask_login
+bleach
+python-multipart
+python-slugify
+fastapi_login
 flask_babel
 
 sentry_sdk
