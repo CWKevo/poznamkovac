@@ -27,4 +27,4 @@ jobs:
     
     - name: Otestovať cez pyTest
       run: |
-        bash tests/pytest_run_gh.sh
+        bash testy/github.sh
