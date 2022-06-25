@@ -1,15 +1,18 @@
-from poznamkovac.backend.emaily import odoslat_email
+from poznamkovac.backend.emaily import odoslat_email, vytvorit_email
 
 
 
-def test_emaily():
+# TODO: Väčšie logo s transparentným pozadím
+def test_email():
     """
         Otestuje odosielanie E-mailov
     """
 
-    odoslat_email("Predmet", "<h1>Obsah - test</h1>", "skevo.cw@gmail.com")
+    obsah = vytvorit_email('Testovací E-mail', texty=['Ahoj!', 'Toto je testovací E-mail.', 'Zdá sa, že to funguje!', '-Poznámkovač'], text_tlacidla='Tlačidlo', href_tlacidla='https://poznamkovac.kevo.link/')
+    return odoslat_email("Predmet", obsah, "skevo.cw@gmail.com")
 
 
 
 if __name__ == '__main__':
-    test_emaily()
+    test_email()
+    print('E-mail bol odoslaný!')
