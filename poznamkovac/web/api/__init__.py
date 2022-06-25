@@ -7,7 +7,6 @@ from poznamkovac.sukromne_nastavenia import SENTRY_DSN, TAJNY_KLUC
 import fastapi as fa
 
 from fastapi_login import LoginManager
-from fastapi_login.exceptions import InvalidCredentialsException
 
 from starlette.datastructures import URLPath
 from starlette.routing import NoMatchFound
@@ -20,7 +19,7 @@ from sqlmodel import Session, select, or_, func
 from fastapi.responses import JSONResponse as _JSONResponse
 
 
-from poznamkovac.funkcie.hashing import hashovat_heslo
+from poznamkovac.backend.hashing import hashovat_heslo
 from poznamkovac.databaza.engine import DATABAZA
 from poznamkovac.databaza.modely import Pouzivatel
 

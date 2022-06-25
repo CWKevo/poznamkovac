@@ -1,7 +1,7 @@
 from sqlmodel import Session
 from bcrypt import checkpw
 
-from poznamkovac.funkcie.hashing import hashovat_heslo
+from poznamkovac.backend.hashing import hashovat_heslo
 
 from testy import TEST_DATABAZA
 from poznamkovac.databaza.modely import Pouzivatel
