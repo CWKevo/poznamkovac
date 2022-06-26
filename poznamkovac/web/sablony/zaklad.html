@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
     <head>
         {% block hlava %}
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/produkcia.min.css') }}?v={{ APP_VERSION }}"/>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/produkcia.min.css') }}?v={{ VERZIA_APLIKACIE }}"/>
         <script src="https://unpkg.com/alpinejs" defer></script>
 
-        <title>{{ APP_NAME }}</title>
+        <title>{{ NAZOV_APLIKACIE }}</title>
         {% endblock hlava %}
     </head>
 
@@ -18,7 +19,7 @@
 
         <footer x-data="{ copyright_rok: new Date().getFullYear() }">
             {% block footer %}
-            <p class="p-4 text-center bg-gray-200">Copyright &copy; <span x-text="copyright_rok"></span> {{ APP_NAME }} ({{ APP_VERSION }}).</p>
+            <p class="p-4 text-center bg-gray-200">Copyright &copy; <span x-text="copyright_rok"></span> {{ NAZOV_APLIKACIE }} ({{ VERZIA_APLIKACIE }}).</p>
             {% endblock footer %}
         </footer>
     </body>

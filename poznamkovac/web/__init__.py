@@ -1,20 +1,12 @@
-import typing as t
-
 import poznamkovac.nastavenia as n
 
 from flask import Flask
-from flask_login import LoginManager
 from flask_babel import Babel
-
-from sqlmodel import Session, select
-
-from poznamkovac.databaza.engine import DATABAZA
-from poznamkovac.databaza.modely import Pouzivatel
 
 from poznamkovac.web.api import api_url_for
 from poznamkovac.web.blueprinty import VSETKY_BLUEPRINTY
 
-from poznamkovac.sukromne_nastavenia import SENTRY_DSN, TAJNY_KLUC # type: ignore
+from poznamkovac.sukromne_nastavenia import SENTRY_DSN, TAJNY_KLUC
 
 
 if SENTRY_DSN is not None:
@@ -29,7 +21,6 @@ WEB.config["SECRET_KEY"] = TAJNY_KLUC
 WEB.config['DEBUG'] = n.DEBUG
 WEB.config['BABEL_TRANSLATION_DIRECTORIES'] = '../i18n/preklady'
 
-AUTHENTICATION = LoginManager(WEB)
 BABEL = Babel(WEB)
 
 for blueprint in VSETKY_BLUEPRINTY:
@@ -41,16 +32,9 @@ for blueprint in VSETKY_BLUEPRINTY:
 def add_additional_context():
     return {
         'api_url_for': api_url_for,
-        'APP_NAME': n.NAZOV,
-        'APP_VERSION': n.VERZIA
+        'NAZOV_APLIKACIE': n.NAZOV,
+        'VERZIA_APLIKACIE': n.VERZIA
     }
-
-
-
-@AUTHENTICATION.user_loader
-def load_user(id) -> t.Optional[Pouzivatel]:
-    with Session(DATABAZA) as session:
-        return session.exec(select(Pouzivatel).where(Pouzivatel.id == id)).first()
 
 
 
